@@ -28,15 +28,13 @@ from market.views import (HomeView, PublicationListView,
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('publication-detail/', PublicationDetailView.as_view()),
-    path('home/', HomeView.as_view()),
-    path('publication-list/', PublicationListView.as_view()),
-    path('faq/', FaqView.as_view()),
-    path('shopping/', ShoppingView.as_view()),
-    path('register/', RegisterView.as_view()),
-    path('login/', LoginView.as_view()),
-    path('favorites/', FavoritesView.as_view()),
-    path('error/', ErrorView.as_view()),
+    path('publication-detail/', PublicationDetailView.as_view(), name='publication-detail-url'),
+    path('home/', HomeView.as_view(), name='home-url'),
+    path('publication-list/', PublicationListView.as_view(), name='publication-list-url'),
+    path('shopping/', ShoppingView.as_view(), name='shopping-url'),
+    path('register/', RegisterView.as_view(), name='register-url'),
+    path('login/', LoginView.as_view(), name='login-url'),
+    path('favorites/', FavoritesView.as_view(), name='favorites-url'),
 
 
 ]

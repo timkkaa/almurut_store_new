@@ -1,5 +1,9 @@
+from datetime import datetime
+
 from django.shortcuts import render
 from django.views.generic import TemplateView
+
+from market.models import Product
 
 
 class HomeView(TemplateView):
@@ -9,14 +13,17 @@ class PublicationDetailView(TemplateView):
     template_name = 'product-detail.html'
 
 
+
+
 class PublicationListView(TemplateView):
     template_name = 'product-list.html'
 
     def get_context_data(self, **kwargs):
-        context(
-
-
-        )
+        context = {
+            'product_list': Product.objects.all(),
+            'now': datetime.datetime.now().date()
+        }
+        return context
 
 
 class FaqView(TemplateView):
